@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[/*---------------------------------------------------------------------------
+ * $1()
+ *   $2
+ *-------------------------------------------------------------------------*/
+function $1 (
+	$3
+) return $4;]]></content>
+	<tabTrigger>funchead</tabTrigger>
+	<scope>source.plsql.oracle</scope>
+	<description>Function Header</description>
+</snippet>

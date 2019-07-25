@@ -1,0 +1,33 @@
+<snippet>
+    <content><![CDATA[create or replace package $1 is
+
+	/*---------------------------------------------------------------------------
+	 * DESCRIPTION
+	 *   $2
+	 *-------------------------------------------------------------------------*/
+
+	/*---------------------------------------------------------------------------
+	 * Types
+	 *-------------------------------------------------------------------------*/
+	subtype udt_Id is api.pkg_definition.udt_Id;
+	subtype udt_IdList is api.pkg_definition.udt_IdList;
+
+	$3
+
+end $1;
+/
+
+grant execute
+on $1
+to posseextensions;
+
+create or replace package body $1 is
+
+	$4
+
+end $1;
+/]]></content>
+    <tabTrigger>pack</tabTrigger>
+    <scope>source.plsql.oracle</scope>
+    <description>New LMS Package</description>
+</snippet>

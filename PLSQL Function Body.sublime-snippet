@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[/*---------------------------------------------------------------------------
+ * $1() -- ${2:PUBLIC}
+ *-------------------------------------------------------------------------*/
+function $1 (
+	$3
+) return $4 is
+	$5
+begin
+	$6
+end $1;]]></content>
+	<tabTrigger>funcbody</tabTrigger>
+	<scope>source.plsql.oracle</scope>
+	<description>Function Body</description>
+</snippet>

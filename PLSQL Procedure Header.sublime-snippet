@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[/*---------------------------------------------------------------------------
+ * $1()
+ *   $2
+ *-------------------------------------------------------------------------*/
+procedure $1 (
+	$3
+);]]></content>
+	<tabTrigger>prochead</tabTrigger>
+	<scope>source.plsql.oracle</scope>
+	<description>Procedure Header</description>
+</snippet>

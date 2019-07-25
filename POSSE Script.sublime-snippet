@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[declare
+	subtype udt_Id is api.pkg_Definition.udt_Id;
+begin
+	api.pkg_LogicalTransactionUpdate.ResetTransaction;
+	$0
+	
+	api.pkg_LogicalTransactionUpdate.EndTransaction;
+	commit;
+exception
+	when others then
+		api.pkg_LogicalTransactionUpdate.ResetTransaction;
+		rollback;
+		raise;
+end;]]></content>
+	<scope>source.plsql.oracle</scope>
+	<description>POSSE Script</description>
+</snippet>

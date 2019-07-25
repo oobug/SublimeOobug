@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[/*---------------------------------------------------------------------------
+ * $1() -- ${2:PUBLIC}
+ *-------------------------------------------------------------------------*/
+procedure $1 (
+	$3
+) is
+	$4
+begin
+	$5
+end $1;]]></content>
+	<tabTrigger>procbody</tabTrigger>
+	<scope>source.plsql.oracle</scope>
+	<description>Procedure Body</description>
+</snippet>
