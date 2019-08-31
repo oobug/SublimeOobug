@@ -1,0 +1,5 @@
+{
+    "target": "oracle_package_build",
+    "selector": "source.plsql.oracle",
+    "cancel": {"kill": true},
+}
