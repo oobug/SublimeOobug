@@ -9,5 +9,7 @@
     { "caption": "Indentation: Set Tab Size to 8", "command": "set_tab_size", "args": {"tab_size": 8} },
     { "caption": "File: Rename File", "command": "rename_file" },
     { "caption": "View: Set Title", "command": "set_title" },
-    { "caption": "Diff DB", "command": "diff_db" }
+    { "caption": "Diff DB", "command": "diff_db" },
+    { "caption": "Line Endings: Set to Unix", "command": "set_line_ending", "args": {"type": "unix"} },
+    { "caption": "Line Endings: Set to Windows", "command": "set_line_ending", "args": {"type": "windows"} }
 ]
