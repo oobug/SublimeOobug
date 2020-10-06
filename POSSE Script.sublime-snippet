@@ -8,10 +8,10 @@ begin
 	api.pkg_LogicalTransactionUpdate.EndTransaction;
 	commit;
 exception
-	when others then
-		api.pkg_LogicalTransactionUpdate.ResetTransaction;
-		rollback;
-		raise;
+when others then
+	api.pkg_LogicalTransactionUpdate.ResetTransaction;
+	rollback;
+	raise;
 end;]]></content>
 	<scope>source.plsql.oracle</scope>
 	<description>POSSE Script</description>
