@@ -12,6 +12,6 @@
 	{ "keys": ["ctrl+shift+;"], "command": "split_selection_to_begin_end" },
 	{ "keys": ["ctrl+shift+."], "command": "delete_around_selection" },
 	{ "keys": ["ctrl+shift+,"], "command": "delete_around_selection", "args": {"inside": true} },
-	{ "keys": ["ctrl+g"], "command": "prompt_goto_line" },
+	{ "keys": ["ctrl+g"], "command": "oobug_prompt_goto_line" },
 	{ "keys": ["ctrl+u"], "command": "soft_undo" }
 ]
