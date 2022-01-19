@@ -1,0 +1,6 @@
+[
+    { "caption": "Transfer to REPL: Selection", "command": "repl_transfer_current", "args": {"scope": "selection"}},
+    { "caption": "Transfer to REPL: File", "command": "repl_transfer_current", "args": {"scope": "file"}},
+    { "caption": "Transfer to REPL: Lines", "command": "repl_transfer_current", "args": {"scope": "lines"}},
+    { "caption": "Transfer to REPL: Block", "command": "repl_transfer_current", "args": {"scope": "block"}}
+]
