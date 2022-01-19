@@ -1,0 +1,114 @@
+%YAML 1.2
+---
+name:  JIRA and Confluence markup syntax
+scope: source.atlassian-markup
+license: MIT
+variables:
+  other_text_mods: '\^|\~|\?\?'
+  projects: '(GD|PAAS)'
+  icons: '\((!|\?|/)\)'
+contexts:
+  main:
+    # icons
+    - match: '{{icons}}'
+      scope: keyword.control
+    # *bold*
+    - match: '\*[^\b*]+\*'
+      scope: markup.bold
+    # _italic_
+    - match: '_(.*)_'
+      scope: markup.italic
+    # -deleted-
+    - match: '\-[^\b]+\-'
+      scope: markup.deleted
+    # -inserted-
+    - match: '\+[^\b]+\+'
+      scope: markup.inserted
+    # {{code}}
+    - match: '\{\{[^\}]+\}\}'
+      scope: markup.raw.inline
+    # others (super- and -sub)
+    - match: '{{other_text_mods}}[^\b]?{{other_text_mods}}'
+      scope: markup.bold
+    # headings h1-5
+    - match: '\b^(h[0-5])(\.)'
+      captures:
+        1: keyword.control
+        2: default
+    # inline blockquote
+    - match: '\b^bq.'
+      scope: keyword.control
+    # lists
+    - match: '^([*+-]+)(?=\s)'
+      captures:
+        1: punctuation.definition.list_item.atlassian
+      push:
+        - meta_scope: markup.list.atlassian
+        - match: ^(?=\S)
+          captures:
+            1: punctuation.definition.list_item.markdown
+          pop: true
+        - match: '^(?![*+-]).*'
+          pop: true
+    # numbers
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric
+    # tables
+    - match: '(\|)(\|)?'
+      scope: markup.bold
+    # {{code}}
+    - match: '\{code(:\w+)?\}'
+      scope: keyword.control
+      push: block_code
+    # {{quote}}
+    - match: '\{quote\}'
+      scope: keyword.control
+      push: block_quote
+    # [#anchor], [link_url], [~user]
+    - match: '\['
+      scope: keyword.control
+      push: anchor
+    # simple curly brackets
+    - match: '(?!\{(code|quote)\})\{'
+      scope: keyword.control
+      push: curly
+    - match: '\}'
+      scope: invalid.illegal.stray-bracket-end
+    # JIRA tickets
+    - match: '{{projects}}-[0-9]+'
+      scope: markup.raw.inline
+  curly:
+    - match: '\}'
+      scope: keyword.control
+      pop: true
+    - include: main
+  block_code:
+    - match: '^(?!\{code\}).*'
+      scope: markup.raw.inline
+    - match: '\{code\}'
+      scope: keyword.control
+      pop: true
+  block_quote:
+    - match: '^(?!\{quote\}).*'
+      scope: markup.italic
+    - match: '\{quote\}'
+      scope: keyword.control
+      pop: true
+  anchor:
+    - match: '(#|~)[^\|\]]+'
+      scope: markup.italic
+    - match: '\|'
+      scope: keyword.control
+    - match: '\]'
+      scope: keyword.control
+      pop: true
+  list-paragraph:
+    - match: \s+(?=\S)
+      push:
+        - meta_scope: meta.paragraph.list.atlassian
+        - match: '^(?![*+-]).*'
+          pop: true
+        # - match: '\s*([*\-+])\s+'
+        #   captures:
+        #     1: punctuation.definition.list_item.atlassian
+        # - include: scope:text.html.basic
