@@ -11,5 +11,6 @@
     { "caption": "View: Set Title", "command": "set_title" },
     { "caption": "Diff DB", "command": "diff_db" },
     { "caption": "Line Endings: Set to Unix", "command": "set_line_ending", "args": {"type": "unix"} },
-    { "caption": "Line Endings: Set to Windows", "command": "set_line_ending", "args": {"type": "windows"} }
+    { "caption": "Line Endings: Set to Windows", "command": "set_line_ending", "args": {"type": "windows"} },
+    { "caption": "Terraform: Format", "command": "exec_wrapper", "args": {"shell_cmd": "terraform fmt", "working_dir": "$file_path"} }
 ]
