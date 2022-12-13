@@ -1,0 +1,12 @@
+[
+    {
+        "id": "selection",
+        "children": [
+            {
+                "command": "invert_selection",
+                "caption": "Invert Selection",
+                "mnemonic": "I"
+            }
+        ]
+    }
+]
