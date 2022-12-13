@@ -1,22 +1,22 @@
 %YAML 1.2
 ---
-name:  JIRA and Confluence markup syntax
+name: JIRA and Confluence markup syntax
 scope: source.atlassian-markup
 license: MIT
 variables:
   other_text_mods: '\^|\~|\?\?'
-  projects: '(GD|PAAS)'
+  projects: "(GD|PAAS)"
   icons: '\((!|\?|/)\)'
 contexts:
   main:
     # icons
-    - match: '{{icons}}'
+    - match: "{{icons}}"
       scope: keyword.control
     # *bold*
     - match: '\*[^\b*]+\*'
       scope: markup.bold
-    # _italic_
-    - match: '_(.*)_'
+    # _italic_
+    - match: "_(.*)_"
       scope: markup.italic
     # -deleted-
     - match: '\-[^\b]+\-'
@@ -48,19 +48,19 @@ contexts:
           captures:
             1: punctuation.definition.list_item.markdown
           pop: true
-        - match: '^(?![*+-]).*'
+        - match: "^(?![*+-]).*"
           pop: true
     # numbers
     - match: '\b(-)?[0-9.]+\b'
       scope: constant.numeric
-    # tables
+    # tables
     - match: '(\|)(\|)?'
       scope: markup.bold
     # {{code}}
     - match: '\{code(:\w+)?\}'
       scope: keyword.control
       push: block_code
-    # {{quote}}
+    # {{quote}}
     - match: '\{quote\}'
       scope: keyword.control
       push: block_quote
@@ -75,7 +75,7 @@ contexts:
     - match: '\}'
       scope: invalid.illegal.stray-bracket-end
     # JIRA tickets
-    - match: '{{projects}}-[0-9]+'
+    - match: "{{projects}}-[0-9]+"
       scope: markup.raw.inline
   curly:
     - match: '\}'
@@ -106,7 +106,7 @@ contexts:
     - match: \s+(?=\S)
       push:
         - meta_scope: meta.paragraph.list.atlassian
-        - match: '^(?![*+-]).*'
+        - match: "^(?![*+-]).*"
           pop: true
         # - match: '\s*([*\-+])\s+'
         #   captures:
