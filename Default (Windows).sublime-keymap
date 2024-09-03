@@ -13,5 +13,31 @@
 	{ "keys": ["ctrl+shift+."], "command": "delete_around_selection" },
 	{ "keys": ["ctrl+shift+,"], "command": "delete_around_selection", "args": {"inside": true} },
 	{ "keys": ["ctrl+g"], "command": "oobug_prompt_goto_line" },
-	{ "keys": ["ctrl+u"], "command": "soft_undo" }
+	{ "keys": ["ctrl+u"], "command": "soft_undo" },
+
+	{ "keys": ["ctrl+keypad_plus"], "command": "increase_markdown_font_size", "context":
+		[
+			{"key": "selector", "operator": "equal", "operand": "text.html.markdown"}
+		]
+	},
+	{ "keys": ["ctrl++"], "command": "increase_markdown_font_size", "context":
+		[
+			{"key": "selector", "operator": "equal", "operand": "text.html.markdown"}
+		]
+	},
+	{ "keys": ["ctrl+="], "command": "increase_markdown_font_size", "context":
+		[
+			{"key": "selector", "operator": "equal", "operand": "text.html.markdown"}
+		]
+	},
+	{ "keys": ["ctrl+keypad_minus"], "command": "decrease_markdown_font_size", "context":
+		[
+			{"key": "selector", "operator": "equal", "operand": "text.html.markdown"}
+		]
+	},
+	{ "keys": ["ctrl+-"], "command": "decrease_markdown_font_size", "context":
+		[
+			{"key": "selector", "operator": "equal", "operand": "text.html.markdown"}
+		]
+	}
 ]
