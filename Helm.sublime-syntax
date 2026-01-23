@@ -1,0 +1,22 @@
+%YAML 1.2
+---
+name: "Helm"
+file_extensions:
+  - tpl
+  - yaml
+  - yml
+scope: source.yaml.helm
+contexts:
+  main:
+    - match: ""
+      push: "Packages/YAML/YAML.sublime-syntax"
+      with_prototype:
+        - match: "{{"
+          captures:
+            0: punctuation.section.embedded.begin.gotemplate
+          push: Packages/User/GoTemplate.sublime-syntax
+          with_prototype:
+            - match: "}}"
+              captures:
+                0: punctuation.section.embedded.end.gotemplate
+              pop: true

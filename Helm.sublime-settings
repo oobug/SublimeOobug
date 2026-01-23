@@ -1,0 +1,7 @@
+// These settings override both User and Default settings for the Helm syntax
+{
+    "rulers": [
+        80
+    ],
+    "draw_white_space": ["selection", "trailing"]
+}
